@@ -75,6 +75,7 @@
 <header>
   <div class="container-fluid">
     <div class="row">
+      
       <div class="col-lg-2 col-md-6 col-sm-6 col-7">
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
           <img class="logo-wrapper" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -93,9 +94,10 @@
         <?php if ($page['nav_additional']): ?>
           <div class="nav-additional">
               <?php print render($page['nav_additional']); ?>
-              </div>                 
+          </div>                 
         <?php endif; ?>
       </div>
+
     </div>
   </div>
 </header>

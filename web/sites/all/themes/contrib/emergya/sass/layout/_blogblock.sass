@@ -5,7 +5,7 @@
     .blog-col
         padding: 9px 40px 9px 40px
         &:first-child
-            border-right: 1px solid
+            border-right: 1px solid $dark
     .views-field-field-blog-post-image
         img
             width: 200px
@@ -26,6 +26,49 @@
 .block-grid
     width: fit-content
     margin: 0 auto
+
+@include medium
+    .region-blog-block      
+        .blog-col
+            padding: 40px 0px
+            &:first-child
+                border-right: 0px solid transparent
+                border-bottom: 1px solid $dark
+
+@include small
+    .region-blog-block      
+        .blog-col
+            padding: 40px 0px
+            &:first-child
+                border-right: 0px solid transparent
+                border-bottom: 1px solid $dark
+
+@include xsmall
+    .region-blog-block      
+        .blog-col
+            padding: 40px 0px
+            &:first-child
+                border-right: 0px solid transparent
+                border-bottom: 1px solid $dark
+        .views-field-field-blog-post-image
+            width: 90%
+            clear: both
+            margin: 0 auto
+            img
+                width: 200px
+                height: 200px
+                float: none
+                display: block
+                margin: 0 auto
+        .views-field-body
+            float: none
+            width: 90%
+            margin: 0 auto
+            display: block    
+            font-family: 'Roboto', sans-serif
+            font-size: 18px
+            line-height: 26px  
+            padding-top: 20px
 
 @include small
     .block-grid

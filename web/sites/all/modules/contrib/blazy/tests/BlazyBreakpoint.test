@@ -1,0 +1,74 @@
+<?php
+
+use Drupal\blazy\BlazyBreakpoint;
+
+/**
+ * Tests the Blazy breakpoints.
+ *
+ * Usage:
+ * $ sudo -u www-data php ./scripts/run-tests.sh Blazy
+ * Or check Blazy tests at: admin/config/development/testing, and hit Run tests.
+ *
+ * @see https://www.drupal.org/simpletest-tutorial-drupal7
+ * @see https://www.drupal.org/node/645286
+ * @see https://www.drupal.org/node/265828
+ * @see https://www.drupal.org/project/ideas/issues/2232271
+ * @see DrupalTestCase
+ *
+ * @requires module registry_autoload
+ *
+ * @group Blazy
+ */
+class BlazyBreakpointTest extends DrupalWebTestCase {
+
+  /**
+   * Provides info for the UI.
+   */
+  public static function getInfo() {
+    // Note: getInfo() strings are not translated with t().
+    return [
+      'name' => 'Blazy breakpoint tests',
+      'description' => 'Tests the Blazy custom breakpoints.',
+      'group' => 'Blazy',
+    ];
+  }
+
+  /**
+   * Overrides DrupalWebTestCase::setUp.
+   */
+  public function setUp() {
+    parent::setUp('registry_autoload');
+  }
+
+  /**
+   * Test widthFromDescriptors.
+   *
+   * @covers \Drupal\blazy\BlazyBreakpoint::widthFromDescriptors
+   * @dataProvider providerTestWidthFromDescriptors
+   */
+  public function testWidthFromDescriptors() {
+    // Simpletest doesn't support annotation nor @dataProvider, let's loop.
+    foreach ($this->providerTestWidthFromDescriptors() as $data) {
+      $result = BlazyBreakpoint::widthFromDescriptors($data[0]);
+      $this->assertEqual($result, $data[1], t('@result returned from input @input', [
+        '@result' => is_bool($result) ? 'FALSE' : $result,
+        '@input' => $data[0],
+      ]));
+    }
+  }
+
+  /**
+   * Provide test cases for ::testWidthFromDescriptors().
+   */
+  public function providerTestWidthFromDescriptors() {
+    return [
+      [1024, 1024],
+      ['1024', 1024],
+      ['769w', 769],
+      ['640w 2x', 640],
+      ['2x 640w', 640],
+      ['xYz123', FALSE],
+    ];
+  }
+
+}

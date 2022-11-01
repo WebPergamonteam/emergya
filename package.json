@@ -1,0 +1,24 @@
+{
+  "name": "emergya.com",
+  "version": "1.0.0",
+  "description": "emergya gulp file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Vadym Volokhov",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "gulp-livereload": "^4.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "mmenu-js": "^9.2.0"
+  }
+}

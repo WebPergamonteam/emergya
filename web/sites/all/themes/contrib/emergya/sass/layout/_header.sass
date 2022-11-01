@@ -1,0 +1,102 @@
+
+.logo-wrapper 
+    height: 37px
+    width: 182px
+    display: block
+    position: relative
+    padding: 0px
+    margin: 21px 48px
+    a
+        display: block
+        position: relative
+        height: 37px
+        width: 182px
+        margin: 0 auto
+        text-indent: -625rem
+        img
+            height: 37px
+            width: 182px
+
+@include xsmall   
+    .logo-wrapper 
+        margin: 21px 10px
+        height: auto
+        width: 160px
+        img
+            height: auto
+            width: 160px  
+
+.main-nav
+    float: left
+    margin-top: 21px
+    ul
+        li.leaf 
+            display: inline-block
+            list-style: none
+            a
+                font-family: "Roboto", sans-serif
+                font-style: normal
+                font-weight: 500
+                font-size: 18px
+                line-height: 28px
+                display: flex
+                align-items: center
+                text-transform: uppercase
+                color: $dark
+                text-decoration: none
+                padding: 0px 5px
+                &:hover
+                    color: $red
+                    text-decoration: none
+            a.active
+                color: $red
+                text-decoration: none
+       
+.nav-additional
+    float: right
+    margin-top: 16px 
+    ul
+        li.leaf 
+            display: inline-block
+            list-style: none 
+            a
+                font-family: "Roboto", sans-serif
+                font-style: normal
+                font-weight: 500
+                font-size: 18px
+                line-height: 28px
+                display: flex
+                align-items: center
+                color: $dark
+                text-decoration: none
+                padding: 6px 32px
+                border: 1px solid $red
+                &:hover
+                    color: $red
+                    text-decoration: none
+            a.active
+                color: $red
+                text-decoration: none  
+
+.mean-container 
+    background-color: #ffffff
+    .mean-nav
+        background-color: #ffffff
+        ul 
+            li 
+                a
+                    color: $dark
+                    &:hover
+                        color: $red
+                        text-decoration: none        
+    .mean-bar
+        background-color: #ffffff
+    a.meanmenu-reveal
+        margin-right: 25px
+        @include every(1)
+            color: $red
+        span
+            display: block
+            height: 3px
+            margin-top: 3px
+            background: $red             

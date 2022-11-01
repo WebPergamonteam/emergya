@@ -1,0 +1,36 @@
+.region-blog-block      
+    display: block
+    position: relative
+    padding: 100px 0 161px
+    .blog-col
+        padding: 9px 40px 9px 40px
+        &:first-child
+            border-right: 1px solid
+    .views-field-field-blog-post-image
+        img
+            width: 200px
+            height: 200px
+            float: left
+            display: block
+            margin: 0 25px
+    .views-field-body
+        float: right
+        display: contents    
+        font-family: 'Roboto', sans-serif
+        font-size: 18px
+        line-height: 26px     
+
+.region-slick-slider
+    margin-top: 15px
+
+.block-grid
+    width: fit-content
+    margin: 0 auto
+
+@include small
+    .block-grid
+            width: 250px
+
+@include medium
+    .block-grid
+            width: 350px  

@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Provides basic Blazy integration for lazy loading and multi-serving images.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function blazy_theme() {
+  return [
+    'blazy' => [
+      'render element' => 'element',
+      'file' => 'blazy.theme.inc',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_load().
+ */
+function blazy_entity_load($entities, $entity_type) {
+  // Provides a consistent property targetType for quick reference.
+  foreach ($entities as $entity) {
+    $entity->targetType = $entity_type;
+  }
+}
+
+/**
+ * Implements hook_system_info_alter().
+ */
+function blazy_system_info_alter(&$info, $file, $type) {
+  if ($type == 'module' && $info['name'] == 'Blazy') {
+
+    // Safe to lock dependencies to prevent its accidental removal.
+    foreach (['registry_autoload', 'psr0', 'xautoload', 'autoload'] as $key) {
+      if (module_exists($key)) {
+        $info['dependencies'][] = $key . ':' . $key;
+        break;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_file_formatter_info_alter().
+ */
+function blazy_file_formatter_info_alter(array &$info) {
+  // Prevents complication at file entity display for now.
+  foreach (['file', 'image'] as $key) {
+    if (isset($info['file_field_blazy_' . $key])) {
+      unset($info['file_field_blazy_' . $key]);
+    }
+  }
+}
+
+// Safe to load off-loaded Blazy module hooks and classes.
+require_once dirname(__FILE__) . '/blazy.runtime.inc';

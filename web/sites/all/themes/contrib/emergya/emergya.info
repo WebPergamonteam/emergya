@@ -1,0 +1,14 @@
+name = emergya
+description = Theme for Emergya
+core = 7.x
+php = 7.0.0
+engine = phptemplate
+
+stylesheets[all][] = css/style.css
+
+; Regions.
+regions[nav_main] = 'Main navigation'
+regions[nav_additional] = 'Additional navigation'
+regions[content] = 'Main content'
+regions[slick_slider] = 'Slick slider'
+regions[blog_block] = 'Blog block'

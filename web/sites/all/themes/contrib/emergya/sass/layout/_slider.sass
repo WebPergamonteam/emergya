@@ -1,0 +1,123 @@
+#slick-slide00,
+#slick-slide01,
+#slick-slide03,
+#slick-slide04
+    ul
+        li
+            @include every(1)
+                 width: 350px
+                 padding: 0px
+                 margin: 3px 44px
+
+@include xsmall    
+    #slick-slide00,
+    #slick-slide01,
+    #slick-slide03,
+    #slick-slide04
+        ul
+            li
+                @include every(1)
+                    width: 250px
+                    height: 250px
+                    padding: 0px
+                    margin: 6px
+
+@include xsmall                        
+    .region-slick-slider
+        img
+            width: 250px
+            height: 250px   
+            display: block                    
+                
+@include xsmall    
+    .media--ratio 
+        .media__element
+            img
+                width: 250px
+                height: 250px   
+                display: block  
+
+@include small    
+    #slick-slide00,
+    #slick-slide01,
+    #slick-slide03,
+    #slick-slide04
+        ul
+            li
+                @include every(1)
+                    width: 250px
+                    height: 250px
+                    padding: 0px
+                    margin: 6px
+
+@include small                        
+    .region-slick-slider
+        img
+            width: 250px
+            height: 250px   
+            display: block                    
+                
+@include small
+    .media--ratio
+        .media__element
+            width: 250px
+            height: 250px   
+            display: block  
+
+@include medium    
+    #slick-slide00,
+    #slick-slide01,
+    #slick-slide03,
+    #slick-slide04
+        ul
+            li
+                @include every(1)
+                    width: 350px
+                    height: 350px
+                    padding: 0px
+                    margin: 6px  
+
+.media--ratio 
+    .media__element
+        img
+            width: 350px
+            height: 350px     
+            display: block   
+
+.slick-list  
+    padding-bottom: 18px      
+
+.slick-dots
+    li.slick-active
+        button  
+            &:before
+                color: $red               
+    li     
+        margin: 0px 8px
+        button  
+            &:before
+                font-size: 1.3rem  
+                color: #CED3D7
+
+.slick__arrow
+    .slick-prev
+        &:before
+            content: url('../img/Line.png')
+            display: block
+            width: 80px
+            height: 122px 
+            transform: rotate(180deg)
+    .slick-next
+        &:before
+            content: url('../img/Line.png')
+            display: block
+            width: 80px
+            height: 122px      
+    button
+        width: 80px
+        height: 122px 
+
+.toggle-icon
+    span
+        .icon
+            width: 30px

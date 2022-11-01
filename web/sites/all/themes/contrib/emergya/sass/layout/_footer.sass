@@ -1,0 +1,70 @@
+.site-footer
+   background-color: $dark
+   display: block
+   position: relative
+   height: fit-content
+   padding: 16px
+
+.footer-logo-wrapper 
+    height: 41px
+    width: 227px
+    display: block
+    position: relative
+    padding: 0px 48px
+    a
+        background-image: url(../emergya-blanco.svg)
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        display: block
+        position: relative
+        height: 41px
+        width: 227px
+        margin: 0 auto
+        text-indent: -625rem
+
+.social-media
+    float: right
+    display: flex
+    .ico-facebook
+        margin: 10px
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        display: block
+        background-image: url(../svg/facebook.svg)
+        width: 18px
+        height: 18px
+        a
+            display: block
+            position: relative
+            width: 18px
+            height: 18px
+            margin: 0 auto
+            text-indent: -625rem
+    .ico-twitter
+        margin: 10px
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        display: block
+        background-image: url(../svg/twitter.svg)
+        width: 18px
+        height: 18px
+        a
+            display: block
+            position: relative
+            width: 18px
+            height: 18px
+            margin: 0 auto
+            text-indent: -625rem
+               
+@include xsmall
+    .social-media-wrapper
+        width: 100%
+        display: block
+        .social-media
+            padding: 15px
+            float: none
+            width: 100px
+            margin: 0 auto   
